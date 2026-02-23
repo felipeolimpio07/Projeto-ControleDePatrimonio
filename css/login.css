@@ -1,0 +1,208 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+/* ====================================================================
+   CONTAINER PRINCIPAL - FUNDO CINZA COMPLETO
+   ==================================================================== */
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #C2B2B2; /* Fundo cinza em toda a tela */
+    padding: 20px;
+}
+
+/* ====================================================================
+   CARD DE LOGIN - CENTRALIZADO
+   ==================================================================== */
+.login-card {
+    width: 100%;
+    max-width: 450px;
+    background-color: white;
+    padding: 50px 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+}
+
+/* ====================================================================
+   LOGO
+   ==================================================================== */
+.logo-container {
+    text-align: center;
+    margin-bottom: 35px;
+}
+
+.logo-container .logo {
+    max-width: 200px;
+    height: auto;
+    border-radius: 10px;
+}
+
+/* ====================================================================
+   TÍTULO
+   ==================================================================== */
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 35px;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+/* ====================================================================
+   MENSAGEM DE ERRO
+   ==================================================================== */
+.error-msg {
+    background-color: #f8d7da;
+    color: #721c24;
+    padding: 12px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    text-align: center;
+    border: 1px solid #f5c6cb;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ====================================================================
+   FORMULÁRIO - INPUTS E LABELS
+   ==================================================================== */
+.input-group {
+    margin-bottom: 25px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: #333;
+    font-weight: 600;
+    font-size: 15px;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s ease;
+    background-color: #fafafa;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus {
+    outline: none;
+    border-color: #668245;
+    background-color: white;
+    box-shadow: 0 0 10px rgba(102, 130, 69, 0.3);
+}
+
+/* ====================================================================
+   BOTÃO DE SUBMIT
+   ==================================================================== */
+button[type="submit"] {
+    width: 100%;
+    padding: 16px;
+    background-color: #668245;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+button[type="submit"]:hover {
+    background-color: #506831;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(102, 130, 69, 0.3);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* ====================================================================
+   RESPONSIVIDADE - TABLETS
+   ==================================================================== */
+@media (max-width: 768px) {
+    .login-card {
+        max-width: 400px;
+        padding: 40px 30px;
+    }
+    
+    .logo-container .logo {
+        max-width: 180px;
+    }
+    
+    h2 {
+        font-size: 26px;
+    }
+}
+
+/* ====================================================================
+   RESPONSIVIDADE - MOBILE
+   ==================================================================== */
+@media (max-width: 480px) {
+    .login-container {
+        padding: 15px;
+    }
+    
+    .login-card {
+        padding: 35px 25px;
+        border-radius: 15px;
+    }
+    
+    .logo-container {
+        margin-bottom: 30px;
+    }
+    
+    .logo-container .logo {
+        max-width: 150px;
+    }
+    
+    h2 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+    
+    input[type="text"],
+    input[type="password"] {
+        padding: 12px 14px;
+        font-size: 15px;
+    }
+    
+    button[type="submit"] {
+        padding: 14px;
+        font-size: 16px;
+    }
+}
+
+/* ====================================================================
+   RESPONSIVIDADE - MOBILE MUITO PEQUENO
+   ==================================================================== */
+@media (max-width: 360px) {
+    .login-card {
+        padding: 30px 20px;
+    }
+    
+    .logo-container .logo {
+        max-width: 130px;
+    }
+    
+    h2 {
+        font-size: 22px;
+    }
+}

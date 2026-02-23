@@ -1,0 +1,896 @@
+/* ====================================================================
+   RESET E CONFIGURAÇÕES GLOBAIS
+   ==================================================================== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #2c3e50;
+    width: 100%;
+    overflow-x: hidden;
+}
+
+/* ====================================================================
+   NAVBAR - BARRA SUPERIOR
+   ==================================================================== */
+.navbar {
+    width: 100%;
+    height: 60px;
+    background-color: #668245;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    border-bottom: 2px solid #506831;
+    z-index: 1000;
+    justify-content: space-between;
+    color: white;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.15);
+}
+
+.navbar .logo {
+    height: 40px;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}
+
+.navbar .logo:hover {
+    transform: scale(1.05);
+}
+
+.navbar h1 {
+    margin: 0 auto;
+    font-size: 20px;
+    flex-grow: 1;
+    text-align: center;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+}
+
+.navbar .logout {
+    background-color: #a71d2a;
+    padding: 8px 16px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    margin-right: 30px;
+}
+
+.navbar .logout:hover {
+    background-color: #7c151c;
+    transform: scale(1.05);
+    box-shadow: 0 4px 10px rgba(167, 29, 42, 0.4);
+}
+
+/* ====================================================================
+   SIDEBAR - MENU LATERAL
+   ==================================================================== */
+.sidebar {
+    width: 250px;
+    background-color: #668245;
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    height: calc(100vh - 60px);
+    padding: 10px;
+    box-sizing: border-box;
+    color: white;
+    overflow-y: auto;
+    box-shadow: 2px 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar a {
+    color: white;
+    padding: 12px 20px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    background-color: transparent;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.sidebar a:hover {
+    background-color: white;
+    color: #668245;
+    transform: translateX(8px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* ====================================================================
+   MAIN CONTENT - CONTEÚDO PRINCIPAL
+   ==================================================================== */
+.main-content {
+    margin-left: 250px;
+    padding: 90px 30px 30px;
+    background: linear-gradient(135deg, #B3B3B3 0%, #9a9a9a 100%);
+    color: #2c3e50;
+    min-height: 100vh;
+    box-sizing: border-box;
+}
+
+/* Container interno para o conteúdo */
+.main-content > * {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* ====================================================================
+   TÍTULOS
+   ==================================================================== */
+h1 {
+    margin: 0 0 40px 0;
+    text-align: center;
+    font-weight: 700;
+    color: #2c3e50;
+    font-size: 32px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    color: #2c3e50;
+    font-size: 28px;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+/* ====================================================================
+   FORMULÁRIOS - CONTAINER
+   ==================================================================== */
+form {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+}
+
+/* ====================================================================
+   LABELS E INPUTS
+   ==================================================================== */
+label {
+    display: block;
+    font-weight: 600;
+    margin-top: 20px;
+    margin-bottom: 8px;
+    color: #2c3e50;
+    font-size: 15px;
+    letter-spacing: 0.3px;
+}
+
+input[type="text"],
+input[type="password"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+textarea,
+select {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+input[type="number"]:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    border-color: #668245;
+    box-shadow: 0 0 15px rgba(102, 130, 69, 0.4);
+    background-color: white;
+}
+
+input[type="text"]:hover,
+input[type="password"]:hover,
+input[type="email"]:hover,
+input[type="tel"]:hover,
+input[type="number"]:hover,
+textarea:hover,
+select:hover {
+    border-color: #668245;
+}
+
+/* Placeholder styling */
+::placeholder {
+    color: #999;
+    font-style: italic;
+}
+
+/* ====================================================================
+   BOTÕES
+   ==================================================================== */
+button.btn,
+button,
+input[type="submit"] {
+    background: linear-gradient(135deg, #28a745 0%, #1e7e34 100%);
+    border: none;
+    color: white;
+    padding: 16px;
+    border-radius: 10px;
+    font-weight: 700;
+    font-size: 17px;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 25px;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 6px 20px rgba(40, 167, 69, 0.4);
+}
+
+button.btn:hover,
+button:hover,
+input[type="submit"]:hover {
+    background: linear-gradient(135deg, #1e7e34 0%, #28a745 100%);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(40, 167, 69, 0.6);
+}
+
+button.btn:active,
+button:active,
+input[type="submit"]:active {
+    transform: translateY(-1px);
+}
+
+/* ====================================================================
+   MENSAGENS DE SUCESSO/ERRO
+   ==================================================================== */
+.msg {
+    margin-top: 25px;
+    margin-bottom: 25px;
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.msg.success {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+    border-left: 5px solid #28a745;
+}
+
+.msg.error {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    color: #721c24;
+    border-left: 5px solid #d63333;
+}
+
+/* ====================================================================
+   LINK VOLTAR
+   ==================================================================== */
+.button-back {
+    display: inline-block;
+    margin-top: 20px;
+    color: #007bff;
+    font-weight: 600;
+    cursor: pointer;
+    text-decoration: none;
+    text-align: center;
+    padding: 10px 20px;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    background-color: rgba(0, 123, 255, 0.1);
+}
+
+.button-back:hover {
+    background-color: #007bff;
+    color: white;
+    transform: translateX(-5px);
+    box-shadow: 0 4px 12px rgba(0, 123, 255, 0.3);
+}
+
+/* ====================================================================
+   SELECT DROPDOWN CUSTOMIZADO
+   ==================================================================== */
+select {
+    cursor: pointer;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Cpath fill='%23668245' d='M10 12l-5-5h10z'/%3E%3C/svg%3E");
+    background-repeat: no-repeat;
+    background-position: right 15px center;
+    background-size: 18px;
+    padding-right: 45px;
+}
+
+/* ====================================================================
+   TEXTAREA
+   ==================================================================== */
+textarea {
+    min-height: 120px;
+    resize: vertical;
+    line-height: 1.6;
+}
+
+/* ====================================================================
+   CHECKBOX E RADIO BUTTONS
+   ==================================================================== */
+input[type="checkbox"],
+input[type="radio"] {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    cursor: pointer;
+    accent-color: #668245;
+}
+
+/* ====================================================================
+   RESPONSIVIDADE - TABLETS
+   ==================================================================== */
+@media (max-width: 900px) {
+    .sidebar {
+        width: 100%;
+        position: relative;
+        height: auto;
+        flex-direction: row;
+        flex-wrap: wrap;
+        padding: 8px;
+        top: 60px;
+        left: 0;
+        z-index: 999;
+    }
+
+    .sidebar a {
+        display: inline-block;
+        padding: 10px 15px;
+        margin: 5px;
+        font-size: 14px;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 100px 20px 30px;
+    }
+
+    form {
+        padding: 30px;
+    }
+
+    h1 {
+        font-size: 28px;
+    }
+}
+
+/* ====================================================================
+   RESPONSIVIDADE - MOBILE
+   ==================================================================== */
+@media (max-width: 600px) {
+    .navbar h1 {
+        font-size: 16px;
+    }
+
+    .navbar .logout {
+        margin-right: 10px;
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+
+    .main-content {
+        padding: 100px 15px 25px;
+    }
+
+    form {
+        padding: 25px 20px;
+    }
+
+    h1 {
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    textarea,
+    select {
+        padding: 12px 14px;
+        font-size: 15px;
+    }
+
+    button.btn,
+    button,
+    input[type="submit"] {
+        padding: 14px;
+        font-size: 16px;
+    }
+}
+
+/* ====================================================================
+   RESPONSIVIDADE - MOBILE MUITO PEQUENO
+   ==================================================================== */
+@media (max-width: 375px) {
+    .navbar h1 {
+        font-size: 14px;
+    }
+
+    h1 {
+        font-size: 20px;
+    }
+
+    form {
+        padding: 20px 15px;
+    }
+}
+/* ====================================================================
+   FORM CONTAINER - ESTILO CARD PREMIUM
+   ==================================================================== */
+.form-container {
+    background: white;
+    padding: 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.form-header {
+    background: linear-gradient(135deg, #668245 0%, #506831 100%);
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+.form-icon {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.form-header h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-container form {
+    padding: 40px;
+    max-width: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+/* ====================================================================
+   INPUT GROUPS COM ÍCONES
+   ==================================================================== */
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-size: 15px;
+}
+
+.label-icon {
+    font-size: 18px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #668245;
+    box-shadow: 0 0 15px rgba(102, 130, 69, 0.4);
+    background-color: white;
+}
+
+.input-group input:hover {
+    border-color: #668245;
+}
+
+/* Dica abaixo dos inputs */
+.input-hint {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+/* ====================================================================
+   MENSAGENS DE ERRO/SUCESSO APRIMORADAS
+   ==================================================================== */
+.msg {
+    padding: 18px 24px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.msg.success {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+    border-left: 6px solid #28a745;
+}
+
+.msg.error {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    color: #721c24;
+    border-left: 6px solid #dc3545;
+}
+
+/* ====================================================================
+   BOTÃO COM ÍCONE
+   ==================================================================== */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #668245 0%, #506831 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 6px 20px rgba(102, 130, 69, 0.4);
+    margin-top: 30px;
+}
+
+.btn-icon {
+    font-size: 20px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 130, 69, 0.6);
+    background: linear-gradient(135deg, #506831 0%, #668245 100%);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+/* ====================================================================
+   FOOTER DO FORMULÁRIO
+   ==================================================================== */
+.form-footer {
+    background-color: #f8f9fa;
+    padding: 20px 30px;
+    text-align: center;
+    border-top: 2px solid #e0e0e0;
+}
+
+.form-footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.form-footer strong {
+    color: #668245;
+}
+
+/* ====================================================================
+   RESPONSIVIDADE
+   ==================================================================== */
+@media (max-width: 600px) {
+    .form-container form {
+        padding: 30px 20px;
+    }
+
+    .form-header {
+        padding: 25px 20px;
+    }
+
+    .form-icon {
+        font-size: 36px;
+    }
+
+    .form-header h3 {
+        font-size: 20px;
+    }
+
+    .input-group input {
+        padding: 12px 14px;
+        font-size: 15px;
+    }
+
+    .btn {
+        padding: 14px;
+        font-size: 16px;
+    }
+}
+
+/* ====================================================================
+   FORM CONTAINER - ESTILO CARD PREMIUM
+   ==================================================================== */
+.form-container {
+    background: white;
+    padding: 0;
+    border-radius: 20px;
+    box-shadow: 0 10px 35px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    margin: 0 auto;
+    overflow: hidden;
+}
+
+.form-header {
+    background: linear-gradient(135deg, #668245 0%, #506831 100%);
+    padding: 30px;
+    text-align: center;
+    color: white;
+}
+
+.form-icon {
+    font-size: 48px;
+    display: block;
+    margin-bottom: 15px;
+}
+
+.form-header h3 {
+    margin: 0;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.form-container form {
+    padding: 40px;
+    max-width: none;
+    box-shadow: none;
+    background: transparent;
+}
+
+/* ====================================================================
+   INPUT GROUPS COM ÍCONES
+   ==================================================================== */
+.input-group {
+    margin-bottom: 25px;
+}
+
+.input-group label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    color: #2c3e50;
+    font-size: 15px;
+}
+
+.label-icon {
+    font-size: 18px;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 10px;
+    border: 2px solid #e0e0e0;
+    box-sizing: border-box;
+    font-size: 16px;
+    background-color: #f8f9fa;
+    color: #2c3e50;
+    transition: all 0.3s ease;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.input-group input:focus {
+    outline: none;
+    border-color: #668245;
+    box-shadow: 0 0 15px rgba(102, 130, 69, 0.4);
+    background-color: white;
+}
+
+.input-group input:hover {
+    border-color: #668245;
+}
+
+/* Dica abaixo dos inputs */
+.input-hint {
+    display: block;
+    font-size: 13px;
+    color: #666;
+    margin-top: 6px;
+    font-style: italic;
+}
+
+/* ====================================================================
+   MENSAGENS DE ERRO/SUCESSO APRIMORADAS
+   ==================================================================== */
+.msg {
+    padding: 18px 24px;
+    border-radius: 12px;
+    margin-bottom: 30px;
+    font-weight: 600;
+    text-align: center;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+    animation: slideDown 0.4s ease;
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.msg.success {
+    background: linear-gradient(135deg, #d4edda 0%, #c3e6cb 100%);
+    color: #155724;
+    border-left: 6px solid #28a745;
+}
+
+.msg.error {
+    background: linear-gradient(135deg, #f8d7da 0%, #f5c6cb 100%);
+    color: #721c24;
+    border-left: 6px solid #dc3545;
+}
+
+/* ====================================================================
+   BOTÃO COM ÍCONE
+   ==================================================================== */
+.btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    width: 100%;
+    padding: 16px;
+    background: linear-gradient(135deg, #668245 0%, #506831 100%);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 18px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    box-shadow: 0 6px 20px rgba(102, 130, 69, 0.4);
+    margin-top: 30px;
+}
+
+.btn-icon {
+    font-size: 20px;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(102, 130, 69, 0.6);
+    background: linear-gradient(135deg, #506831 0%, #668245 100%);
+}
+
+.btn:active {
+    transform: translateY(-1px);
+}
+
+/* ====================================================================
+   FOOTER DO FORMULÁRIO
+   ==================================================================== */
+.form-footer {
+    background-color: #f8f9fa;
+    padding: 20px 30px;
+    text-align: center;
+    border-top: 2px solid #e0e0e0;
+}
+
+.form-footer p {
+    margin: 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.form-footer strong {
+    color: #668245;
+}
+
+/* ====================================================================
+   RESPONSIVIDADE
+   ==================================================================== */
+@media (max-width: 600px) {
+    .form-container form {
+        padding: 30px 20px;
+    }
+
+    .form-header {
+        padding: 25px 20px;
+    }
+
+    .form-icon {
+        font-size: 36px;
+    }
+
+    .form-header h3 {
+        font-size: 20px;
+    }
+
+    .input-group input {
+        padding: 12px 14px;
+        font-size: 15px;
+    }
+
+    .btn {
+        padding: 14px;
+        font-size: 16px;
+    }
+}
+
